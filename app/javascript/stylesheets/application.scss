@@ -1,0 +1,40 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// 全体の背景色と文字色
+body{
+ background-color:#e3dbc5;
+ color:#42200d;
+}
+
+// ヘッダーとフッターの罫線
+.cp_hr08 {
+  border-top: 2px dashed #b5a094;
+  border-bottom: 2px dashed #ffffff;
+}
+
+
+// ヘッダーのcss
+.navbar-item{
+  margin-right:5px;
+}
+
+.navbar-item:last-child{
+  margin-right:0;
+}
+
+// フッターのcss
+.flex{
+ display:flex;
+}
+
+.flex .store-infomation{
+  font-size:15px;
+  text-align:left;
+  padding:0;
+}
+
+.flex .store-image{
+  text-align:left;
+  padding:0;
+}

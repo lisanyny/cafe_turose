@@ -35,8 +35,8 @@ Rails.application.routes.draw do
     get "customers/my_page", to: "customers#show", as: "my_page"
     get "customers/information/edit", to: "customers#edit", as: "edit_information"
     patch "customers/information", to: "customers#update", as: "update_information"
-    get "customers/confirm", to: "customers#confirm", as: "confirm"
-    patch "customers/thanks", to: "customers#thanks", as: "thanks"
+    get "customers/confirm", to: "customers#confirm"
+    patch "customers/thanks", to: "customers#thanks"
 
   end
 

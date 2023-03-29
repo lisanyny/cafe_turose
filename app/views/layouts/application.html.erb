@@ -6,11 +6,91 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="/"><%= image_tag 'cafe_Turose2.PNG', width: 'auto', height: '100px' %></a>
+        <div class="container">
+          <div class="row">
+            <ul class="navbar-nav ml-auto">
+              <!--管理者ログイン済みヘッダー-->
+              <% if current_admin %>
+                <li class="navbar-item">
+                  <%= link_to "カフェメニュー" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "来店予約" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "顧客一覧", admin_customers_path %>
+                </li>
+                <li class="navbaer-item">
+                  <%= link_to "通販商品" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "注文履歴" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "ログアウト" %>
+                </li>
+              <% elsif customer_signed_in? %>
+                <li class="navbar-item">
+                  <%= link_to "マイページ" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to　"cafe menu" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "来店予約" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "通販商品" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "カート" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "ログアウト" %>
+                </li>
+              <% else %>
+                <li class="navbar-item">
+                  <%= link_to "cafe menu" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "来店予約" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "通販商品" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "会員登録" %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "ログイン" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <hr class="cp_hr08" />
+    </header>
     <%= yield %>
   </body>
+  <footer>
+    <hr class="cp_hr08" />
+    <div class="flex">
+      <%= image_tag 'cafe_Turose1.PNG', width: 'auto', height: '80px', class: 'store-image' %>
+      <div class="store-infomation">
+        〒000-0000<br>
+        愛知県名古屋市〇〇区〇〇町〇番<br>
+        Open 11:00 / Close 18:00<br>
+        定休日　毎週水曜日
+      </div>
+    </div>
+   </footer>
 </html>

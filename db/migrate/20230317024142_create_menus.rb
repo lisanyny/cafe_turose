@@ -5,7 +5,7 @@ class CreateMenus < ActiveRecord::Migration[6.1]
       t.string :image_id, null: false
       t.string :introduction, null: false
       t.integer :price, null: false
-      t.blooen :is_active, null: false, default: true
+      t.boolean :is_active, null: false, default: true
       t.integer :genre, null: false, default: 1
 
       t.timestamps
