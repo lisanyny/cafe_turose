@@ -20,57 +20,57 @@
               <!--管理者ログイン済みヘッダー-->
               <% if current_admin %>
                 <li class="navbar-item">
-                  <%= link_to "カフェメニュー" %>
+                  <%= link_to "カフェメニュー", admin_menus_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "来店予約" %>
+                  <%= link_to "来店予約", admin_reserves_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "顧客一覧", admin_customers_path %>
-                </li>
-                <li class="navbaer-item">
-                  <%= link_to "通販商品" %>
+                  <%= link_to "顧客一覧", admin_customers_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "注文履歴" %>
+                  <%= link_to "通販商品", admin_items_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "ログアウト" %>
+                  <%= link_to "注文履歴", admin_root_path, class: 'link' %>
+                </li>
+                <li class="navbar-item">
+                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'link' %>
                 </li>
               <% elsif customer_signed_in? %>
                 <li class="navbar-item">
-                  <%= link_to "マイページ" %>
+                  <%= link_to "マイページ", my_page_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to　"cafe menu" %>
+                  <%= link_to　"cafe menu", menus_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "来店予約" %>
+                  <%= link_to "来店予約", reserves_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "通販商品" %>
+                  <%= link_to "通販商品", items_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "カート" %>
+                  <%= link_to "カート", cart_items_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "ログアウト" %>
+                  <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'link' %>
                 </li>
               <% else %>
                 <li class="navbar-item">
-                  <%= link_to "cafe menu" %>
+                  <%= link_to "cafe menu", menus_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "来店予約" %>
+                  <%= link_to "来店予約", reserves_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "通販商品" %>
+                  <%= link_to "通販商品", items_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "会員登録" %>
+                  <%= link_to "会員登録", new_customer_registration_path, class: 'link' %>
                 </li>
                 <li class="navbar-item">
-                  <%= link_to "ログイン" %>
+                  <%= link_to "ログイン", new_customer_session_path, class: 'link' %>
                 </li>
               <% end %>
             </ul>
