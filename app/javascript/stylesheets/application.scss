@@ -42,13 +42,15 @@ body{
   padding:0;
 }
 
-// ページタイトル
-.page-title{
-  font-size:30px;
-  font-weight:bold;
+// ログイン入力欄
+.session-th{
+  width:150px;
 }
 
-.session-table{
+// ログイン画面リンクテキスト
+.link-text{
+  color:#735541;
+  font-weight:bold;
   margin-top:20px;
 }
 
@@ -69,31 +71,16 @@ body{
   background:#735541;
 }
 
-// ログイン入力欄
-.session-th{
-  width:150px;
+// ページタイトル
+.page-title{
+  font-size:30px;
+  font-weight:bold;
 }
 
-.link-text{
-  color:#735541;
-  font-weight:bold;
+.session-table{
   margin-top:20px;
 }
 
-// テーブル
-table{
-  margin:10px 0;
-}
-
-thead{
-  background:#735541;
-  color:#e3dbc5;
-  text-align:center;
-}
-
-tbody{
-  color:#735541;
-}
 
 // 会員の有効ステータス
 .status-false{
@@ -109,14 +96,39 @@ tbody{
 
 // 編集ボタン
 .edit-btn{
-  margin:10px 0;
-  padding:10 30px;
-  width:120px;
+  margin:20px 0;
+  padding:5px 30px;
   text-decoration:none;
   background:#e3dbc5;
   color:#735541;
   border: 2px solid #735541;
   font-weight:bold;
+}
+
+.edit-btn:hover{
+  color:#e3dbc5;
+  background:#735541;
+}
+
+// 一覧画面のリンク
+.index-link{
+  color:#735541;
+  text-decoration:none;
+}
+
+// テーブル
+table{
+  margin:10px 0;
+}
+
+thead{
+  background:#735541;
+  color:#e3dbc5;
+  text-align:center;
+}
+
+tbody{
+  color:#735541;
 }
 
 // ページネーション
