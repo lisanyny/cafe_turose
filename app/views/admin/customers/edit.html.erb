@@ -1,7 +1,7 @@
 <div class="container">
   <span class="page-title"><%= @customer.last_name+@customer.first_name %>さんの会員情報編集</span>
+  <%= form_with model: @customer, url: admin_customer_path(@customer.id), local:true do |f| %>
   <div class="row">
-    <%= form_with model: @customer, url: admin_customer_path(@customer.id), local:true do |f| %>
     <table>
       <tr>
         <th>会員ID</th>
