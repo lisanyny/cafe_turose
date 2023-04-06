@@ -1,2 +1,25 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="text-align:center;">
+      <!--<span class="welcome">Welcome</span><br>-->
+      <%= image_tag 'cafe_Turose1.PNG', width: 'auto', height: '300px', class: 'home-image' %>
+      <div class="store-info">
+        <span>
+          cafe Turoseは愛知県名古屋市の住宅街にあるカフェです。<br>
+          ランチやアフタヌーンティーを店内でお楽しみいただくことができます。<br>
+          2023年3月よりお菓子のテイクアウト・オンライン販売を始めました!<br>
+        </span>
+        <span class="warning">＊予約・購入には会員登録が必要になります</span>
+      </div>
+    </div>
+
+    <div class="col-6" style="text-align:center; margin:30px 0;">
+      <%= link_to "cafe menu", menus_path, class: 'home-link' %>
+    </div>
+
+    <div class="col-6" style="text-align:center; margin:30px 0;">
+      <%= link_to "shopping", items_path, class: 'home-link' %>
+    </div>
+
+  </div>
+</div>

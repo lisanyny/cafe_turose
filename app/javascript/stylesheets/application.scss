@@ -81,6 +81,29 @@ body{
   margin-top:20px;
 }
 
+// home画面のレイアウト
+.welcome{
+  font-size:40px;
+  font-weight:bold;
+}
+
+.home-image{
+  margin-bottom:30px;
+}
+
+.store-info{
+  font-size:15px;
+}
+
+.warning{
+  color:#870c46;
+}
+
+.home-link{
+  font-size:30px;
+  font-weight:bold;
+  color:#42200d;
+}
 
 // 会員の有効ステータス
 .status-false{
