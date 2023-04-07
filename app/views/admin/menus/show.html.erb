@@ -1,2 +1,36 @@
-<h1>Admin::Menus#show</h1>
-<p>Find me in app/views/admin/menus/show.html.erb</p>
+<div class="container">
+  <span class="page-title">カフェメニュー詳細</span>
+  <div class="row">
+    <div class="col-4 menu-show">
+      <%= image_tag @menu.image, width: 'auto', height: '300px' %>
+    </div>
+    <div class="col-8 menu-show">
+      <table>
+        <tr>
+          <th>商品名</th>
+          <td><%= @menu.item %></td>
+        </tr>
+        <tr>
+          <th>商品説明</th>
+          <td><%= @menu.introduction %></td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td><%= @menu.genre %></td>
+        </tr>
+        <tr>
+          <th>税込価格<br>(税抜価格)</th>
+          <td>
+            <%= @menu.with_tax_price %>
+            (<%= @menu.price %>円)
+          </td>
+        </tr>
+        <tr>
+          <th>販売ステータス</th>
+          <td><%= @menu.is_active %></td>
+        </tr>
+      </table>
+      <%= link_to "編集する", edit_admin_menu_path(@menu.id), class: 'edit-btn' %>
+    </div>
+  </div>
+</div>

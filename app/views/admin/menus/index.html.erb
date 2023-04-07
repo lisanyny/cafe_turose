@@ -1,6 +1,39 @@
 <div class="container">
-  <span class="page-title">カフェメニュー</span>
+  <span class="page-title">カフェメニュー</span><br>
+
+  <!--メニュー新規登録画面リンクボタン-->
+  <div class="plus-btn">
+    <%= link_to new_admin_menu_path, class: 'link' do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+  </div>
+
   <div class="row">
-    
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>商品名</th>
+          <th>価格(税込)</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @menus.each do |menu| %>
+        <tr>
+          <td><%= link_to menu.item, admin_menu_path(menu.id), class: 'link' %></td>
+          <td><%= menu.price %></td>
+          <td><%= menu.genre %></td>
+          <td>
+            <% if menu.is_active == true %>
+              <span class="status-false">販売中</span>
+            <% else %>
+              <span class="status-true">販売停止中</span>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

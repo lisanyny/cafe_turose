@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 2023_03_29_042402) do
   create_table "items", force: :cascade do |t|
     t.integer "genre_id", null: false
     t.string "name", null: false
-    t.string "image_id", null: false
     t.text "introduction"
     t.integer "price", null: false
     t.boolean "is_active", default: true, null: false
@@ -108,7 +107,6 @@ ActiveRecord::Schema.define(version: 2023_03_29_042402) do
 
   create_table "menus", force: :cascade do |t|
     t.string "item", null: false
-    t.string "image_id", null: false
     t.string "introduction", null: false
     t.integer "price", null: false
     t.boolean "is_active", default: true, null: false

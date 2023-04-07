@@ -14,6 +14,7 @@ class Admin::MenusController < ApplicationController
   end
 
   def show
+    @menu = Menu.find(params[:id])
   end
 
   def edit
@@ -22,7 +23,7 @@ class Admin::MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:item, :image_id, :introduction, :price, :is_active, :genre)
+    params.require(:menu).permit(:item, :image, :introduction, :price, :is_active, :genre)
   end
 
 end
