@@ -1,2 +1,45 @@
-<h1>Admin::Menus#edit</h1>
-<p>Find me in app/views/admin/menus/edit.html.erb</p>
+<div class="container">
+  <span class="page-title">カフェメニュー編集</span>
+  <%= form_with model: @menu, url: admin_menu_path(@menu.id), local:true do |f| %>
+  <div class="row">
+    <table>
+      <tr>
+        <th>商品画像</th>
+        <td><%= f.file_field :image, accept: "image/**" %></td>
+      </tr>
+      <tr>
+        <th>商品名</th>
+        <td><%= f.text_field :item %></td>
+      </tr>
+      <tr>
+        <th>商品説明</th>
+        <td><%= f.text_area :introduction %></td>
+      </tr>
+      <tr>
+        <th>ジャンル</th>
+        <td><%= f.select :genre, ['special','food','dessert','drink',] %></td>
+      </tr>
+      <tr>
+        <th>税抜価格</th>
+        <td><%= f.text_field :price %>円</td>
+      </tr>
+      <tr>
+        <th>販売ステータス</th>
+        <td>
+          <div class="radio_inline">
+            <div>
+              <%= f.radio_button :is_active, "true" %>
+              <%= f.label :is_active, "販売中" %>
+            </div>
+            <div>
+              <%= f.radio_button :is_active, "false" %>
+              <%= f.label :is_active, "販売停止中" %>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <%= f.submit "変更を保存", class: 'edit-btn' %>
+  <% end %>
+</div>

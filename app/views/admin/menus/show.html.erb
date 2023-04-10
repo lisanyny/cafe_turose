@@ -27,7 +27,13 @@
         </tr>
         <tr>
           <th>販売ステータス</th>
-          <td><%= @menu.is_active %></td>
+          <td>
+            <% if @menu.is_active == true %>
+              <span class="status-false">販売中</span>
+            <% else %>
+              <span class="status-true">販売停止中</span>
+            <% end %>
+          </td>
         </tr>
       </table>
       <%= link_to "編集する", edit_admin_menu_path(@menu.id), class: 'edit-btn' %>
