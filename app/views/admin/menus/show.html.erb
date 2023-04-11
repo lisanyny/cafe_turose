@@ -1,9 +1,15 @@
 <div class="container">
   <span class="page-title">カフェメニュー詳細</span>
   <div class="row">
+    <!--画像表示-->
     <div class="col-4 menu-show">
-      <%= image_tag @menu.image, width: 'auto', height: '300px' %>
+      <% if @menu.image.attached? %>
+        <%= image_tag @menu.image, width: 'auto', height: '300px' %>
+      <% else %>
+        <%= image_tag 'no_image', size: '200x200' %>
+      <% end %>
     </div>
+    <!--画像以外のメニュー詳細-->
     <div class="col-8 menu-show">
       <table>
         <tr>

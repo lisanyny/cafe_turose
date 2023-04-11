@@ -1,2 +1,51 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<div class="container">
+  <span class="page-title">商品詳細</span>
+  <div class="row">
+
+    <!--画像の表示-->
+    <div class="col-4 menu-show">
+      <% if @item.image.attached? %>
+        <%= image_tag @item.image, width: 'auto', height: '300px' %>
+      <% else %>
+        <%= image_tag 'no_image', size: '200x200' %>
+      <% end %>
+    </div>
+
+    <!--画像以外の商品詳細-->
+    <div class="col-8 menu-show">
+      <table>
+        <tr>
+          <th>商品名</th>
+          <td><%= @item.name %></td>
+        </tr>
+        <tr>
+          <th>商品説明</th>
+          <td><%= @item.introduction %></td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td><%= @item.genre.name %></td>
+        </tr>
+        <tr>
+          <th>税込価格<br>(税抜価格)</th>
+          <td>
+            <%= @item.with_tax_price %>
+            (<%= @item.price %>)円
+          </td>
+        </tr>
+        <tr>
+          <th>販売ステータス</th>
+          <td>
+            <% if @item.is_active == true %>
+              <span class="status-false">販売中</span>
+            <% else %>
+              <span class="status-true">販売停止中</span>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+      <%= link_to "編集する", edit_admin_item_path(@item.id), class: 'edit-btn' %>
+    </div>
+  </div>
+
+</div>

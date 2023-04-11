@@ -21,11 +21,11 @@
         <% @items.each do |item| %>
         <tr>
           <td><%= item.id %></td>
-          <td><%= link_to item.name, admin_item_path(item.id) %></td>
+          <td><%= link_to item.name, admin_item_path(item.id), class: 'link' %></td>
           <td><%= item.price %></td>
           <td><%= item.genre.name %></td>
           <td>
-            <% if menu.is_active == true %>
+            <% if item.is_active == true %>
               <span class="status-false">販売中</span>
             <% else %>
               <span class="status-true">販売停止中</span>
