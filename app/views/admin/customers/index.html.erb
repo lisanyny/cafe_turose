@@ -15,7 +15,7 @@
         <tr>
           <td><%= customer.id %></td>
           <td>
-            <%= link_to admin_customer_path(customer.id), class: 'index_link' do %>
+            <%= link_to admin_customer_path(customer.id), class: 'link' do %>
               <%= customer.last_name+'　'+customer.first_name %>
             <% end %>
           </td>
