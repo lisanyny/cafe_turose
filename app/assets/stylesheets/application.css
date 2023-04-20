@@ -14,3 +14,14 @@
  *= require_tree .
  *= require_self
  */
+
+.swiper {
+  width: 800px;
+  height: 350px;
+  margin-top: 20px;
+}
+
+:root {
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: #ffffff;
+}
