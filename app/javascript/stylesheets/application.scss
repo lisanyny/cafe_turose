@@ -111,6 +111,12 @@ body{
   color:#42200d;
 }
 
+.home-link:hover{
+  text-decoration:none;
+  color:#870c46;
+  font-weight:bold;
+}
+
 // 会員の有効ステータス
 .status-false{
   color:#800442;
