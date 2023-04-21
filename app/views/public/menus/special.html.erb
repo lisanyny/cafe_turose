@@ -1,2 +1,22 @@
-<h1>Public::Menus#special</h1>
-<p>Find me in app/views/public/menus/special.html.erb</p>
+<div class="container">
+  <span class="page-title">Special</span>
+  <span>※予約必須(2名様からご注文いただけます)</span>
+  <div class="row">
+    <% @menus.each do |menu| %>
+    <!--メニュー画像-->
+    <div class="col-4 menu-show">
+      <% if menu.image.attached? %>
+        <%= image_tag menu.image, width: 'auto', height: '300px' %>
+      <% else %>
+        <%= image_tag 'no_image', size: '200x200' %>
+      <% end %>
+    </div>
+    <!--メニュー詳細情報-->
+    <div class="col-8 menu-show">
+      <div class="special-title"><%= menu.item %></div><br>
+      <div class="menu-introduction"><%= menu.introduction %></div><br>
+      <div class="menu-price"><%= menu.with_tax_price %>円〜</div>
+    </div>
+    <% end %>
+  </div>
+</div>

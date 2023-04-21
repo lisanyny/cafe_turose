@@ -1,2 +1,17 @@
-<h1>Public::Menus#food</h1>
-<p>Find me in app/views/public/menus/food.html.erb</p>
+<div class="container">
+  <span class="page-title">Food</span>
+  <div class="row">
+    <% @menus.each do |menu| %>
+    <div class="col-4">
+      <% if menu.image.attached? %>
+        <%= image_tag menu.image, width: 'auto', height: '200px' %>
+      <% else %>
+        <%= image_tag 'no_image', size: '200x200' %>
+      <% end %>
+      <div class="menu-title"><%= menu.item %></div>
+      <div class="menu-introduction"><%= menu.introduction %></div>
+      <div class="menu-price"><%= menu.with_tax_price %>円</div>
+    </div>
+    <% end %>
+  </div>
+</div>

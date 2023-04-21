@@ -4,9 +4,11 @@ class Public::MenusController < ApplicationController
   end
 
   def special
+    @menus = Menu.where(genre: '1')
   end
 
   def food
+    @menus = Menu.where(genre: '2')
   end
 
   def dessert
