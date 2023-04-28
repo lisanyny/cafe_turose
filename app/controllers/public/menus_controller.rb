@@ -12,8 +12,10 @@ class Public::MenusController < ApplicationController
   end
 
   def dessert
+    @menus = Menu.where(genre: '3')
   end
 
   def drink
+    @menus = Menu.where(genre: '4')
   end
 end
